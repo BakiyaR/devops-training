@@ -1,0 +1,14 @@
+pipeline{
+    agent any
+    stages{
+        stage('Batch Job'){
+            steps{
+                bat """
+                    dir
+                    cd
+                    ping www.google.com
+                    """
+            }
+        }
+    }
+}
