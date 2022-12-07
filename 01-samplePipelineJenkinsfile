@@ -3,9 +3,9 @@ pipeline{
     stages{
         stage('Batch Job'){
             steps{
-                bat """
-                    dir
-                    cd
+                sh """
+                    pwd
+                    ls -lart
                     ping www.google.com
                     """
             }
