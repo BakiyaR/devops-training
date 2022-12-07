@@ -5,7 +5,7 @@ pipeline{
             steps{
                 sh """
                     pwd
-                    ls -lart
+                    cd
                     ping www.google.com
                     """
             }
