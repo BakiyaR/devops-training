@@ -8,9 +8,9 @@ pipeline {
                         echo "Steps in Job1"
                     }
                 }
-                stage('Job2'){
+                stage('Job3'){
                     steps{
-                        echo "Steps in Job2"
+                        echo "Steps in Job3"
 
                         timeout(time: 5, unit: 'SECONDS') {
                             echo "Timeout completed"

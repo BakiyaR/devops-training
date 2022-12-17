@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Hello World'
                 script {
-                    echo 'Another World'
+                    echo 'new worlds'
                     sh 'echo Third World'
                     sh 'python -V'
                     sh '''
