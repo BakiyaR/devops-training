@@ -1,0 +1,20 @@
+- name: Execute the command in remote shell; stdout goes to the specified file on the remote
+  ansible.builtin.shell: first_script.sh >> log.txt
+
+- name: Change the working directory to tmp/ before executing the command
+  ansible.builtin.shell: first_script.sh >> log.txt
+  args:
+    chdir: tmp/
+
+# You can also use the 'args' form to provide the options.
+- name: This command will change the working directory to tmp/ and will only run when tmp/log.txt doesn't exist
+  ansible.builtin.shell: first_script.sh >> log.txt
+  args:
+    chdir: tmp/
+    creates: log.txt
+
+# You can also use the 'cmd' parameter instead of free form format.
+- name: This command will change the working directory to tmp/
+  ansible.builtin.shell:
+    cmd: ls -l | grep log
+    chdir: tmp/
